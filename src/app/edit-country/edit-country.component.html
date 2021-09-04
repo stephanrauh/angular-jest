@@ -36,6 +36,6 @@
       </small>
 
     </div>
-    <button (click)="save()">Save</button>
+    <button (click)="save()" [disabled]="!(canSave$ | async)">Save</button>
   </form>
 </div>

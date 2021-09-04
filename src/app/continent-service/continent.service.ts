@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Country } from './country';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { Continent } from './continent';
 import { Observable } from 'rxjs';
 
@@ -21,7 +21,8 @@ export class ContinentService {
   }
 
   private readContinents2() {
-    this.countries$ = this.httpClient.get<Array<Country>>('https://restcountries.eu/rest/v2/all');
+    console.log("Reading continents from web")
+    this.countries$ = this.httpClient.get<Array<Country>>('https://restcountries.eu/rest/v2/all').pipe(tap(x => console.log("Read", x)));
     this.continents$ = this.countries$.pipe(map((countries) => this.extractContinents(countries)));
     this.listOfContinents$ = this.countries$.pipe(map((countries) => this.extractContinentNames(countries)));
   }

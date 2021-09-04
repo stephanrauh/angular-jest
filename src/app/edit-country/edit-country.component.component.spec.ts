@@ -4,17 +4,27 @@ import { EditCountryComponent } from './edit-country.component';
 import { mockActivatedRoute } from './activated-route-mock';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ContinentService } from '../continent-service/continent.service';
+import { MockService } from 'ng-mocks';
+import { of } from 'rxjs';
+import { Country } from '../continent-service/country';
 
 describe('EditCountryComponent', () => {
   let component: EditCountryComponent;
   let fixture: ComponentFixture<EditCountryComponent>;
   let nameInputField: HTMLInputElement;
   let saveButton: HTMLButtonElement;
+  let MockContinentService: ContinentService;
 
   beforeEach(async () => {
+    MockContinentService = MockService(ContinentService);
+    MockContinentService.countries$ = of<Array<Country>>([{name: "Spain", population: 0, region: "Europe", flag: undefined},
+      {name: "Portugal", population: 0, region: "Europe", flag: undefined}])
+    ;
+    MockContinentService.save = jest.fn();
     await TestBed.configureTestingModule({
       declarations: [EditCountryComponent],
-      providers: [mockActivatedRoute],
+      providers: [mockActivatedRoute, {  provide: ContinentService, useValue: MockContinentService}],
       imports: [HttpClientTestingModule, ReactiveFormsModule],
     }).compileComponents();
   });
@@ -23,8 +33,8 @@ describe('EditCountryComponent', () => {
     fixture = TestBed.createComponent(EditCountryComponent);
     component = fixture.componentInstance;
 
-    fixture.detectChanges();
-    await fixture.whenStable();
+    fixture.detectChanges(); // ngOnInit()
+    // await fixture.whenStable();
     nameInputField = fixture.nativeElement.querySelector('input[name="name"]') as HTMLInputElement;
     saveButton = fixture.nativeElement.querySelector('button') as HTMLButtonElement;
   });
@@ -33,12 +43,20 @@ describe('EditCountryComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should update on navigation', async () => {
+    fixture.detectChanges();
+    component.country$.subscribe();
+    // await component.country$.toPromise(); // <<< this does't work
+    // await fixture.whenStable();
+    expect(component.formGroup.value.name).toBe("Spain")
+  });
+
   it('should store the input value in the formGroup', async () => {
     expect(nameInputField).toBeTruthy();
     nameInputField.value = 'Portugal';
     nameInputField.dispatchEvent(new Event('input'));
     fixture.detectChanges();
-    await fixture.whenStable();
+    // await fixture.whenStable();
     expect(component.formGroup.get('name').value).toBe('Portugal');
   });
 
@@ -49,7 +67,7 @@ describe('EditCountryComponent', () => {
     fixture.detectChanges();
     expect(component.formGroup.get('name').value).toBe('Portugal');
     saveButton.click();
-    await fixture.whenStable();
-
+    // await fixture.whenStable();
+    expect(MockContinentService.save).toBeCalled();
   });
 });
