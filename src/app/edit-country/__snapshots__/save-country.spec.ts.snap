@@ -1,0 +1,214 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Save-Country-Question Should render the confirmation dialog 1`] = `
+<body>
+  <div
+    id="root0"
+  >
+    <p-confirmdialog
+      acceptlabel="I might!"
+      header="Save country"
+      key="confirm-save-country"
+      message="Do you want to save the country?"
+      rejectlabel="No. That's too much work."
+    >
+      <div
+        class="p-dialog-mask p-component-overlay p-dialog-mask-scrollblocker"
+      >
+        <div
+          class="ng-trigger ng-trigger-animation p-dialog p-confirm-dialog p-component ng-animating"
+          style=""
+        >
+          
+          <div
+            class="p-dialog-header"
+            style=""
+          >
+            <span
+              class="p-dialog-title"
+            >
+              Save country
+            </span>
+            
+            <div
+              class="p-dialog-header-icons"
+            >
+              <button
+                class="p-dialog-header-icon p-dialog-header-close p-link"
+                type="button"
+              >
+                <span
+                  class="pi pi-times"
+                />
+              </button>
+              
+            </div>
+          </div>
+          
+          <div
+            class="p-dialog-content"
+          >
+            
+            <span
+              class="p-confirm-dialog-message"
+            >
+              Do you want to save the country?
+            </span>
+          </div>
+          
+          <div
+            class="p-dialog-footer"
+            style=""
+          >
+            <button
+              class="p-confirm-dialog-reject p-ripple p-button p-component"
+              pbutton=""
+              pripple=""
+              type="button"
+            >
+              <span
+                aria-hidden="true"
+                class="p-button-icon p-button-icon-left pi pi-times"
+              />
+              <span
+                class="p-button-label"
+              >
+                No. That's too much work.
+              </span>
+            </button>
+            
+            <button
+              class="p-confirm-dialog-accept p-ripple p-button p-component"
+              pbutton=""
+              pripple=""
+              type="button"
+            >
+              <span
+                aria-hidden="true"
+                class="p-button-icon p-button-icon-left pi pi-check"
+              />
+              <span
+                class="p-button-label"
+              >
+                I might!
+              </span>
+            </button>
+            
+          </div>
+          
+        </div>
+        
+      </div>
+      
+    </p-confirmdialog>
+    <div
+      class="padding"
+    >
+      <form>
+        <div
+          class="p-grid"
+        >
+          <h2
+            class="p-col-12"
+          >
+            
+          </h2>
+          <div
+            class="p-col-2"
+          >
+            Name
+          </div>
+          <div
+            class="p-col-10"
+          >
+            <input
+              formcontrolname="name"
+              name="name"
+              pinputtext=""
+            />
+          </div>
+          <small
+            class="error p-col-12 p-offset-2"
+          >
+             The field is required. 
+          </small>
+          
+          <div
+            class="p-col-2"
+          >
+            Population
+          </div>
+          <div
+            class="p-col-10"
+          >
+            <input
+              formcontrolname="population"
+              name="population"
+              pinputtext=""
+            />
+          </div>
+          <small
+            class="error p-col-12 p-offset-2"
+          >
+             The field is required. 
+          </small>
+          
+          <div
+            class="p-col-2"
+          >
+            Region
+          </div>
+          <div
+            class="p-col-10"
+          >
+            <input
+              formcontrolname="region"
+              name="region"
+              pinputtext=""
+            />
+          </div>
+          <small
+            class="error p-col-12 p-offset-2"
+          >
+             The field is required. 
+          </small>
+          
+          
+          <div
+            class="p-col-2"
+          >
+            Flag
+          </div>
+          <div
+            class="p-col-10"
+          >
+            <input
+              formcontrolname="flag"
+              name="flag"
+              pinputtext=""
+            />
+          </div>
+          <small
+            class="error p-col-12 p-offset-2"
+          >
+             The field is required. 
+          </small>
+          
+        </div>
+        <button
+          class="p-button p-component"
+          disabled=""
+          pbutton=""
+        >
+           Save 
+          <span
+            class="p-button-label"
+          >
+             
+          </span>
+        </button>
+      </form>
+    </div>
+  </div>
+</body>
+`;

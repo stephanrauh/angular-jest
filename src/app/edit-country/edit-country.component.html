@@ -1,41 +1,71 @@
+<p-confirmDialog
+  key="confirm-save-country"
+  header="Save country"
+  message="Do you want to save the country?"
+  acceptLabel="I might!"
+  rejectLabel="No. That's too much work."
+></p-confirmDialog>
 <div class="padding">
   <form [formGroup]="formGroup">
     <div class="p-grid">
-      <h2 class="p-col-12">{{(country$ | async)?.name}}</h2>
+      <h2 class="p-col-12">{{ (country$ | async)?.name }}</h2>
 
       <div class="p-col-2">Name</div>
-      <div class="p-col-10"><input name="name" formControlName="name"></div>
-      <small class="error p-col-12 p-offset-2"
-        *ngIf="formGroup.get('name')?.hasError('required')">
+      <div class="p-col-10">
+        <input name="name" formControlName="name" pInputText />
+      </div>
+      <small
+        class="error p-col-12 p-offset-2"
+        *ngIf="formGroup.get('name')?.hasError('required')"
+      >
         The field is required.
       </small>
 
       <div class="p-col-2">Population</div>
-      <div class="p-col-10"><input name="population" formControlName="population"></div>
-      <small class="error p-col-12 p-offset-2"
-        *ngIf="formGroup.get('population')?.hasError('required')">
+      <div class="p-col-10">
+        <input name="population" formControlName="population" pInputText />
+      </div>
+      <small
+        class="error p-col-12 p-offset-2"
+        *ngIf="formGroup.get('population')?.hasError('required')"
+      >
         The field is required.
       </small>
 
       <div class="p-col-2">Region</div>
-      <div class="p-col-10"><input name="region" formControlName="region"></div>
-      <small class="error p-col-12 p-offset-2"
-        *ngIf="formGroup.get('region')?.hasError('required')">
+      <div class="p-col-10">
+        <input name="region" formControlName="region" pInputText />
+      </div>
+      <small
+        class="error p-col-12 p-offset-2"
+        *ngIf="formGroup.get('region')?.hasError('required')"
+      >
         The field is required.
       </small>
-      <small class="error p-col-12 p-offset-2"
-        *ngIf="formGroup.get('region')?.hasError('minlength')">
-        The minimum length for this field is {{formGroup.get('region')?.errors?.minlength.requiredLength}} characters.
+      <small
+        class="error p-col-12 p-offset-2"
+        *ngIf="formGroup.get('region')?.hasError('minlength')"
+      >
+        The minimum length for this field is
+        {{
+          formGroup.get("region")?.errors?.minlength.requiredLength
+        }}
+        characters.
       </small>
 
       <div class="p-col-2">Flag</div>
-      <div class="p-col-10"><input name="flag" formControlName="flag"></div>
-      <small class="error p-col-12 p-offset-2"
-        *ngIf="formGroup.get('flag')?.hasError('required')">
+      <div class="p-col-10">
+        <input name="flag" formControlName="flag" pInputText />
+      </div>
+      <small
+        class="error p-col-12 p-offset-2"
+        *ngIf="formGroup.get('flag')?.hasError('required')"
+      >
         The field is required.
       </small>
-
     </div>
-    <button (click)="save()" [disabled]="!(canSave$ | async)">Save</button>
+    <button (click)="save()" [disabled]="!(canSave$ | async)" pButton>
+      Save
+    </button>
   </form>
 </div>

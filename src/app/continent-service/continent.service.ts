@@ -20,9 +20,9 @@ export class ContinentService {
     this.readContinents2();
   }
 
-  private readContinents2() {
+  public readContinents2() {
     console.log("Reading continents from web")
-    this.countries$ = this.httpClient.get<Array<Country>>('https://restcountries.eu/rest/v2/all').pipe(tap(x => console.log("Read", x)));
+    this.countries$ = this.httpClient.get<Array<Country>>('https://restcountries.com/v2/all').pipe(tap(x => console.log("Read", x)));
     this.continents$ = this.countries$.pipe(map((countries) => this.extractContinents(countries)));
     this.listOfContinents$ = this.countries$.pipe(map((countries) => this.extractContinentNames(countries)));
   }
