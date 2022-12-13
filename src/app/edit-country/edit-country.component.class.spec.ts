@@ -1,3 +1,4 @@
+import { ConfirmationService } from 'primeng/api';
 import { EditCountryComponent } from './edit-country.component';
 import { mockActivateRouteValue } from './activated-route-mock';
 import { MockService } from 'ng-mocks';
@@ -11,7 +12,7 @@ describe('EditCountryComponent', () => {
   beforeEach(() => {
     let service = MockService(ContinentService);
     service.countries$ = of<Country[]>([{ name: 'Spain', population: 0, flag: '', region: 'Europe' }]);
-    component = new EditCountryComponent(mockActivateRouteValue, service);
+    component = new EditCountryComponent(mockActivateRouteValue, service, MockService(ConfirmationService));
   });
 
   it('should create', () => {

@@ -6,6 +6,7 @@ exports[`Save-Country-Question Should render the confirmation dialog 1`] = `
     id="root0"
   >
     <p-confirmdialog
+      class="p-element"
       key="confirm-save-country"
       message="Do you want to save the country?"
     >
@@ -53,7 +54,7 @@ exports[`Save-Country-Question Should render the confirmation dialog 1`] = `
             style=""
           >
             <button
-              class="p-confirm-dialog-reject p-ripple p-button p-component"
+              class="p-element p-ripple p-confirm-dialog-reject p-button p-component"
               pbutton=""
               pripple=""
               type="button"
@@ -70,7 +71,7 @@ exports[`Save-Country-Question Should render the confirmation dialog 1`] = `
             </button>
             
             <button
-              class="p-confirm-dialog-accept p-ripple p-button p-component"
+              class="p-element p-ripple p-confirm-dialog-accept p-button p-component"
               pbutton=""
               pripple=""
               type="button"

@@ -91,6 +91,7 @@
   },
   "defaultProject": "example-app-v12",
   "cli": {
-    "packageManager": "yarn"
+    "packageManager": "yarn",
+    "analytics": false
   }
 }
