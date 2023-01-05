@@ -13,5 +13,5 @@ module.exports = {
     'json-summary'
   ],
   coverageDirectory: './coverage/test',
-  collectCoverage: true,
+  collectCoverage: true
 };
