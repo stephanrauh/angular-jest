@@ -1,0 +1,25 @@
+name: Continuous Integration
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+    branches:
+      - master
+      - 'release/*'
+
+  workflow_dispatch:
+
+jobs:
+
+  
+  ## Runs Nx build, lint, and test targets for projects affected by head branch
+  ci-preflight:
+    name: CI Preflight
+
+    steps:
+      - name: 🧪 Unit-Test affected projects
+        run: |-
+          npm run test

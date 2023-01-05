@@ -9,4 +9,9 @@ globalThis.ngJest = {
 module.exports = {
   preset: 'jest-preset-angular',
   setupFilesAfterEnv: ['<rootDir>/setup-jest.ts'],
+  coverageReporters: [
+    'json-summary'
+  ],
+  coverageDirectory: './coverage/test',
+  collectCoverage: true,
 };
