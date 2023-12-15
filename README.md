@@ -2,22 +2,13 @@
 
 ## Comments appreciated
 
-I've created this repository to learn how to use Jest and to collect best practices. At the time of writing, I'm a rookie, and you - dear reader - are probably more expert than me. In other words: I'm open to suggestions on how to improve the demo and the corresponding article on https://www.beyondjava.net/jest-mocks-and-spies.
+I've created this repository to learn how to use Jest and to collect best practices. At the time of writing, I'm a rookie, and you - dear reader - are probably more expert than me. In other words: I'm open to suggestions on how to improve the demos and the corresponding article on https://www.beyondjava.net/jest-mocks-and-spies.
 
-## Setup
+## Angular 17
 
-There are excellent tutorials out there (think of https://timdeschryver.dev/blog/integrate-jest-into-an-angular-application-and-library), but for some reason, most of them broken at one point or another. 
-Usually, they work for older Angular versions, but not for the current version of Angular and Jest.
+The Angular team published experimental support for Jest with Angular 16, but it took me until Angular 17 to take it for a ride. You find the result in the `Angular 17` folder. It's probably not perfect: the Angular team hasn't published a tutorial yet (or I didn't find it), so much of my code is guesswork.
 
-So take one of the official example projects as a starting point: https://github.com/thymikee/jest-preset-angular/tree/master/examples.
+## Angular 15 and below
 
-## Key takeaways
+Before Angular 16, there was no official support for Jest, but several great community solutions. The folder `Angular 15 and below` shows how to use Jest with an older Angular version. When I created the repository, Angular was at version 12, so I guess the recipe works for all versions from 12 to 15.
 
-- Jest mocks are what other frameworks call "spies."
-- If you want to "mock away" a dependency, consider using an empty class instead of trying to use something like `jest.fn()`. In other words, if all you need is a simple stub, using a Jest function is both overkill and unnecessarily lengthy.
-- Large parts of your components can be tested as simple classes. You don't always need an Angular `TestBed.` Whenever possible, write tests without `TestBed.` Simple classes need less infrastructure, so tests using simple classes are both faster and simpler.
-- `ng-mocks` is a helpful framework simplifying a lot of things.
-- https://github.com/testing-library/angular-testing-library also looks promising. I haven't made up my mind about it yet, but it's worth a look.
-
-## State of the art
-This repository is still evolving. As mentioned above, I invite you to share your knowledge with me, so this repository and the blog article get better!
