@@ -15,11 +15,7 @@
     "declaration": false,
     "experimentalDecorators": true,
     "moduleResolution": "node",
-    "paths": {
-      "shared-library": [
-        "./dist/shared-library"
-      ]
-    },
+    "preserveSymlinks": true,
     "importHelpers": true,
     "target": "ES2022",
     "module": "ES2022",
@@ -33,6 +29,7 @@
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
-    "strictTemplates": true
+    "strictTemplates": true,
+    "preserveSymlinks": true,
   }
 }
