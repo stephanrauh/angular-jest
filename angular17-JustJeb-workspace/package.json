@@ -6,9 +6,9 @@
     "ng": "ng",
     "start:app1": "ng serve app1 -o --port 4200",
     "start:app2": "ng serve app2 -o --port 4201",
-    "test:app1": "jest --config projects/app1/jest.config.js",
-    "test:app2": "jest --config projects/app2/jest.config.js",
-    "test:lib": "jest --config projects/shared-library/jest.config.js",
+    "test:app1": "ng test app1",
+    "test:app2": "ng test app2",
+    "test:lib": "ng test shared-library",
     "build:lib": "ng build --configuration production shared-library",
     "watch:lib": "ng build shared-library --configuration production --watch",
     "build:app1": "npm link shared-library && ng build --configuration production app1",
@@ -37,7 +37,6 @@
     "@types/jest": "^29.5.11",
     "jasmine-core": "~5.1.0",
     "jest": "^29.7.0",
-    "jest-preset-angular": "^13.1.4",
     "ng-packagr": "^17.0.0",
     "typescript": "~5.2.2"
   }
